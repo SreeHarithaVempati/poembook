@@ -1,0 +1,31 @@
+.invalid-feedback{
+    color: red;
+  }
+
+
+.err{text-align: center; margin-top:15px;
+  color: red;
+}
+
+.container{
+  display: block; text-align: center;
+  width: 50%;
+  margin: 20px auto 0 auto;
+  box-sizing: border-box;
+  border: 5px solid rgb(54, 51, 51);
+  padding: 30px 50px 25px 50px;
+  font-family: Arial,sans-serif;
+  font-size: 14px;  box-shadow: 5px 10px #888888;
+}
+
+#regbtn{
+  margin-right: 10px;
+}
+
+h3{
+  padding-bottom: 5px; text-align: center
+}
+#loginbtn{
+  font-size:18px;
+   font-family:initial;
+}

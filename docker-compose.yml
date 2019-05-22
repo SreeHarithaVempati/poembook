@@ -1,0 +1,40 @@
+version: '3.2'
+services:
+  poemuser-app:
+   image: sreeharithavempati/poembook:poemuser-app
+   restart: always
+   network_mode: host
+   ports:
+     - 5656:5656
+   expose:
+     - 5656
+   depends_on:
+     - poemdatabase-mysql
+  poem-app:
+   image: sreeharithavempati/poembook:poem-app
+   restart: always
+   network_mode: host
+   ports:
+     - 5655:5655
+   expose:
+     - 5655
+   depends_on:
+     - poemdatabase-mysql
+
+  poemdatabase-mysql:
+   image: mysql:5.5
+   network_mode: host
+   ports:
+     - "3306:3306"
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: poemdatabase
+      
+  angular:
+    image: sreeharithavempati/poembook:poemangular-app
+    network_mode: host
+    container_name: angular-docker
+    ports:
+      - 4200:4200
+    expose:
+     -  4200

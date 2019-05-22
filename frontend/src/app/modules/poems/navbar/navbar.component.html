@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand"><span class="fa fa-pencil"></span><strong>Poem</strong></a>
+
+  <div class="collapse navbar-collapse justify-content-end"  id="navbarTogglerDemo03">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="router2.url !='/login' && router2.url !='/register'" id="nav-item-color" [routerLink]="['/dashboard']"><i class="fa fa-home"></i>&nbsp;<strong>Home</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link favoritePage" *ngIf="router2.url !='/login' && router2.url !='/register'" id="nav-item-color" [routerLink]="['/favourites']"><i class="fa fa-heart"></i>&nbsp;<strong>Favourites</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link logout" *ngIf="router2.url !='/login' && router2.url !='/register'" id="nav-item-color" (click)="logout()"><i class="fa fa-sign-out"></i>&nbsp;<strong>Logout</strong></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>

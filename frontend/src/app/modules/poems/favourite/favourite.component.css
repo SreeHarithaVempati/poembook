@@ -1,0 +1,9 @@
+a:hover{
+    cursor: pointer;
+}
+#a-color{
+    color: #337ab7 ;
+}
+#a-hearticon{ float: right;
+    color: #337ab7 ;
+}

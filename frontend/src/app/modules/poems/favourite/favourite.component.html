@@ -1,0 +1,67 @@
+<div class="container justify-content-center">
+<div class="row">
+  <div id="favouritecard" class="card col-lg-6 col-md-6 col-sm-6 col-xs-12 rad shadow-md hoverable view overlay zoom p-3"
+    *ngFor="let p of favPoem">
+    <div class="card-body card-body-cascade text-center">
+      <h4 class="card-title"><strong>{{p.title}}</strong></h4>
+      <h5 class="blue-text pb-2">{{p.author}}</h5>
+    </div>
+    <div class="card-footer">
+      <a id="a-color" data-toggle="modal" data-target="#exampleModal" (click)="viewPoem(p)">
+        <strong>...Read Full Poem <i class="fa fa-eye"></i></strong>
+      </a>
+      <a id="a-hearticon" class="delete" (click)="delete(p)"><strong><i class="fa fa-trash"></i></strong></a>
+      <br>
+      <a id="a-color" data-toggle="modal" data-target="#exampleModalCenter"(click)="updatePoem(p)">
+        <i class="fa fa-pencil-square-o"><strong>Comments</strong> </i>
+      </a>
+    </div>
+
+    <!-- Poem lines Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">{{poemTitle}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" *ngFor="let line of poemlines">
+            <p class="card-text">
+              {{line}}
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a (click)="deleteLines(poem)" data-dismiss="modal" aria-label="Close" id="a-color"><strong><i
+                  class="fa fa-trash"></i> Delete</strong></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Update Modal -->
+<div *ngIf="commentModal" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{poemUpdate.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input type="text" [(ngModel)]="poemUpdate.comments">
+      </div>
+      <div class="modal-footer">
+        <a id="a-color" data-dismiss="modal" aria-label="Close" (click)="updatePoem(poemUpdate)"><i class="fa fa-save"> Save Comment</i></a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>

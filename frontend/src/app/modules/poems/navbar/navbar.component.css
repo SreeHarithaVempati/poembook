@@ -1,0 +1,19 @@
+a:hover{
+    cursor: pointer;
+}
+.navbar-brand{
+    font-family:Monotype Corsiva;
+    font-size: 25px;
+    color: black;
+}
+
+.fa .fa-pencil{
+    font-size: 25px;
+    color: black;
+}
+#nav-item-color{
+    color:black;
+}
+#nav-item-color:hover{
+    color:whitesmoke;
+}
